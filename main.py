@@ -1,26 +1,3 @@
-# book library program
-# bookList = [""]
-# userChoice = input("Do you want to add, remove, or view books: ")
-
-# def addBooks(userChoice):
-#     #enter function command here
-#     while userChoice == "Add" or "add":
-#         userAdd = input("Enter the book name you want to add: ")
-#         bookList.append(userAdd)
-
-# def removeBooks(userChoice):
-#     #enter function command here
-#     while userChoice == "remove" or "Remove":
-#         userRemove = input("Enter the book name that you want to remove: ")
-#         bookList.remove(userRemove)
-
-# def viewBooks(userChoice):
-#     while userChoice == "view" or "View":
-#         print(bookList)
-
-
-#restarting the program
-
 
 bookList = []
 
