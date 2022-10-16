@@ -1,35 +1,42 @@
+# import functions from utilities
+from utilities import addBooks, removeBooks, viewBooks, borrowBooks
 
-bookList = []
+# Create booklist with predefined books
+bookList = [
+    {'id': 101, 'name': 'romeo and juliet', 'author': 'shakespeare'},
+    {'id': 102, 'name': 'romeo', 'author': 'sp'},
+    {'id': 103, 'name': 'juliet', 'author': 'spr'}
+]
 
+# Create borrow list with dummy data
+borrowList = [
+    {'id': 99, 'name': 'dummy', 'author': 'dummy'}
+]
 
-def addBooks(bookAddInput):
-    #enter function command here
-    bookList.append(bookAddInput)
-    print()
-def removeBooks(bookRemoveInput):
-    #enter function command here
-    bookList.remove(bookRemoveInput)
-    print()
-
-def viewBooks(bookList):
-  totalBooks = len(bookList)
-  print(f'Total number of books available in library: {totalBooks}')
-  if (totalBooks > 0):
-    print("Below are the books available in the library: ")
-    for i in range(totalBooks):
-      print(str(i+1)+".", bookList[i])
-  print()
-
+# Initialize user choice
 userChoice = 0
-while userChoice != 4:
-    userChoice = int(input("What do you want to do?\n1. Add books\n2. Remove books\n3. View books\n4. Quit\n\n"))
+
+# Itterate until user quits
+while userChoice != 6:
+    # Take user input
+    userChoice = int(input("What do you want to do?\n1. Add books\n2. Remove books\n3. View books\n4. Borrow\n5. Quit\n\n"))
+
+    # If user chooses to add, add books function is called
     if userChoice == 1:
-        bookAddInput = input("Enter the book name that you would like to add: ")
-        addBooks(bookAddInput)
+        addBooks(bookList)
+    
+    # If user chooses to remove books, remove books function is called
     if userChoice == 2:
-        bookRemoveInput = input("Enter the book name that you would like to remove: ")
-        removeBooks(bookRemoveInput)
+        removeBooks(bookList)
+    
+    # If user chooses to view books, view books function is called
     if userChoice == 3:
         viewBooks(bookList)
 
-#update your removeBook function by improving the user experience. Let them choose what book to remove
+    # If user chooses to borrow books, borrow books function is called
+    if userChoice == 4:
+        bookList,borrowList = borrowBooks(bookList,borrowList)
+    
+    # If user chooses to quit program, the while loop will quit
+    if userChoice == 5:
+        break
